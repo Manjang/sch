@@ -1,0 +1,24 @@
+<div class="review-col">
+	<div class="hotel-review-form">
+		<h1>Write Your Review</h1>
+
+		
+		
+		<form action="/reviews/create" method="POST">
+			<div id="rating-form" name="rating">
+			<label>Rating</label>
+		</div>
+			<textarea name="comment"></textarea>
+			<button type="submit" class="btn">Submit</button>
+		</form>
+
+	</div>
+</div>
+
+
+<script>
+	$('#rating-form').raty({
+		path: '/assets/',
+		scoreName: 'review[rating]'
+	});
+</script>

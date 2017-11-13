@@ -1,0 +1,8 @@
+<%= simple_form_for @hotel do |f| %>
+  <%= f.input :name, label: "Hotel Name" %>
+  <%= f.input :address, label: "Hotel Address" %>
+  <%= f.input :description, label: "About the Hotel" %>
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
+  <%= f.file_field :hotel_img %>
+  <%= f.button :submit %>
+<% end %>

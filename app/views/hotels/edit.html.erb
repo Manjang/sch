@@ -1,0 +1,10 @@
+<h1>Edit Hotel</h1>
+
+<%= simple_form_for @hotel, html: {multipart: true} do |f| %>
+  <%= f.input :name, label: "Hotel Name" %>
+  <%= f.input :address, label: "Hotel Address" %>
+  <%= f.input :description, label: "About the Hotel" %>
+  <%= f.select :category_id, @categories %>
+  <%= f.file_field :hotel_img %>
+  <%= f.button :submit %>
+<% end %>

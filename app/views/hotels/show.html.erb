@@ -1,0 +1,35 @@
+<% @hotel.each do |h| %>
+
+	<h2><%= h.name %></h2>
+	<h4><%= Category.find_by_id(h.category_id).name %></h4>
+	<h3><%= h.address %></h3>
+	<p><%= h.description %></p>
+
+
+
+<div class="row">
+	<div class="hotel-reviews">
+		<h1>Reviews</h1>
+		<div class="review-rating" data-score="<%= Review.find_by_id(h.review_id).rating %>" >
+			
+		</div>	
+		<%= Review.find_by_id(h.review_id).comment %>
+
+		<div class="add-review">
+			<%= link_to "Add Review", new_review_path, class: "btn" %>
+		</div>
+	</div>
+</div>
+
+
+<% end %>
+
+<script>
+	$('.review-rating').raty({
+		readOnly: true,
+		score: function() {
+		    return $(this).attr('data-score');
+		},
+		path: '/assets/'
+	});
+</script>

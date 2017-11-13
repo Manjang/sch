@@ -1,0 +1,13 @@
+<div class="review">
+	<div class="review-rating" data-score="<%= review.rating %>"></div>
+	<p class="review-comment"><%= review.comment %></p>
+
+	<% if user_signed_in? %>
+		<% if review.user_id == current_user.id %>
+			<div class="review-btn-group">
+				<%= link_to "Edit", edit_hotel_review_path(review.hotel, review), class: "btn" %>
+				<%= link_to "Delete", hotel_review_path(review.hotel, review), method: :delete, data: { confirm: "Are you sure?" }, class: "btn" %>
+			</div>
+		<% end %>
+	<% end %>
+</div>
