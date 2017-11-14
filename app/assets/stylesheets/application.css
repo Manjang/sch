@@ -403,3 +403,12 @@ body {
   border-color: transparent;
   text-decoration: none;
   background: green; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+

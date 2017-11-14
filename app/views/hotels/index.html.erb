@@ -25,7 +25,7 @@
 				<div class="hotel-card">
 					<%= image_tag hotel.hotel_image.url(:hotel_index), class: "hotel-image-thumbnail" %>
 					<div class="hotel-desc">
-						<%= link_to hotel.name, hotel_path(hotel.id), class: "hotel-name" %>
+						<%= link_to hotel.name, { :controller => 'hotels', :action => 'show', :id => hotel.id }, :method => :get, class: "hotel-name" %>
 						<span><%= truncate(hotel.description, :length => 120)  %></span>
 						<ul class="rate">
 							<li class="icon star"><i class="fa fa-star"></i></li>

@@ -1,19 +1,32 @@
 class HotelsController < ApplicationController
 
-	before_action :find_hotel, only: [:show, :edit, :update, :destroy]
+
+	# before_action :find_hotel, only: [:show, :edit, :update, :destroy, :add_review]
+	protect_from_forgery :except =>[:update, :destroy, :add_review]
+	skip_before_action :verify_authenticity_token
 
 	def index
 		@hotels = Hotel.all.order("created_at ASC")
 	end
 
 	def show
-		# @hotel = Hotel.where(id: params[:hotel_id]).first
-		# @t = Review.where(hotel_id: @hotel)
-		# @hotel = Hotel.all
 		@hotel = Hotel.find(params[:id])
-		@review = Review.all
+		@review = Review.where(hotel_id: @hotel)
 	end
-
+	def add_review
+		
+		# @add_rev = Review.new(:rating => params[:rating], :comment => params[:comment], :hotel_id => params[:hotel_id])
+		@add_rev = Review.new(review_params)
+		
+		if @add_rev.save!
+			redirect_to :action => 'show', :id => params[:hotel_id]
+			flash[:success] = "Review Added"
+		else
+			redirect_to :action => 'show', :id => params[:hotel_id]
+			flash[:danger] = "Sorry review cannot be added"
+		end
+		
+	end
 	def new
 		@hotel = current_user.hotels.build
 		@categories = Category.all.map{ |c| [c.name, c.id] }
@@ -52,12 +65,14 @@ class HotelsController < ApplicationController
 
 	private
 
-	def hotel_params
-		params.require(:hotel).permit(:name, :address, :description, :category_id, :hotel_img)
+	# def hotel_params
+	# 	params.require(:hotel).permit(:name, :address, :description, :category_id, :hotel_img)
+	# end
+	def review_params
+			params.permit(:rating, :comment, :hotel_id)
 	end
-
-	def find_hotel
-		@hotel = Hotel.find(params[:id])
-	end
+	# def find_hotel
+	# 	@hotel = Hotel.find(params[:id])
+	# end
 
 end

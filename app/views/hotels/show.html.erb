@@ -1,28 +1,50 @@
-<% @hotel.each do |h| %>
 
-	<h2><%= h.name %></h2>
-	<h4><%= Category.find_by_id(h.category_id).name %></h4>
-	<h3><%= h.address %></h3>
-	<p><%= h.description %></p>
+
+	<h2><%= @hotel.name %></h2>
+	<h3><%= @hotel.address %></h3>
+	<p><%= @hotel.description %></p>
 
 
 
 <div class="row">
 	<div class="hotel-reviews">
 		<h1>Reviews</h1>
-		<div class="review-rating" data-score="<%= Review.find_by_id(h.review_id).rating %>" >
+		<% @review.each do |r| %>
+		<div class="review-rating" data-score="<%= r.rating %>" >
 			
 		</div>	
-		<%= Review.find_by_id(h.review_id).comment %>
+		 
 
-		<div class="add-review">
-			<%= link_to "Add Review", new_review_path, class: "btn" %>
-		</div>
+		<%= r.comment %>
+		<% end %>
+		
+		<div class="review-col">
+	<div class="hotel-review-form">
+		<h1>Write Your Review</h1>
+
+		
+		
+		<form action="/hotels/add_review" method="post">
+			<div id="rating-form"  >
+				
+				<label>Rating</label>
+			</div>
+			<input type="hidden" name="hotel_id" value="<%=@hotel.id%>">
+			<textarea name="comment"></textarea>
+			<!-- <button type="submit" name="submit" class="btn">Submit</button> -->
+			<input type="submit" id="submit" value="Submit" class="btn" />
+		</form>
+
 	</div>
 </div>
 
 
-<% end %>
+
+	</div>
+</div>
+
+
+
 
 <script>
 	$('.review-rating').raty({
@@ -31,5 +53,12 @@
 		    return $(this).attr('data-score');
 		},
 		path: '/assets/'
+	});
+</script>
+
+<script>
+	$('#rating-form').raty({
+		path: '/assets/',
+		scoreName: 'rating'
 	});
 </script>
