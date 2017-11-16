@@ -803,8 +803,7 @@ progress[value]::-webkit-progress-bar {
 
 .reviews .review {
   border-bottom: 2px solid #f5f5f5;
-  padding: 15px;
-  display: flex; }
+  padding: 15px; }
   .reviews .review .review-author {
     width: 30%;
     display: flex;
@@ -1053,4 +1052,56 @@ progress {
 .slideshow-nav .slide {
   height: 80px;
   width: 100px;
+}
+
+
+
+.review {
+    display:none;
+    padding: 10px;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    box-shadow: 0 1px 1px #ccc;
+    margin-bottom: 5px;
+    background-color: #f1f1f1;
+}
+.totop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+.totop a {
+    display: none;
+}
+.reviews a, 
+.reviews a:visited {
+    color: #33739E;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+}
+
+.reviews a:hover {
+    text-decoration: none;
+}
+
+.reviews #loadMore {
+    padding: 10px;
+    text-align: center;
+    background-color: #33739E;
+    color: #fff;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    box-shadow: 0 1px 1px #ccc;
+    transition: all 600ms ease-in-out;
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+    -o-transition: all 600ms ease-in-out;
+}
+
+.reviews #loadMore:hover {
+    background-color: #fff;
+    color: #33739E;
 }

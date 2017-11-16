@@ -23,12 +23,26 @@
 					<li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel3.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel4.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel5.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel6.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel7.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel8.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel9.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel10.jpg);"></li>
 				</ul>
 
 				<ul class="slideshow slideshow-nav" data-flickity='{ "asNavFor": ".slideshow-main", "pageDots": false, "contain": true }'>
 				  	<li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li>
 				  	<li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
 				  	<li class="slide" style="background-image: url(../assets/hotel3.jpg);"></li>
+				  	<li class="slide" style="background-image: url(../assets/hotel4.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel5.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel6.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel7.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel8.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel9.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel10.jpg);"></li>
 				</ul>
 
 
@@ -65,7 +79,7 @@
 					<p><%= @hotel.description %></p>
 				</div>
 
-				<div class="reviews">
+				<div class="reviews" id="reviews">
 					<div class="reviews-headline">Reviews</div>
 					<div class="reviews-wrap">
 						<% @review.each do |r| %>
@@ -82,6 +96,13 @@
 						</div>
 						<% end %>
 					</div>
+
+					<a href="#" id="loadMore">Load More</a>
+
+					<p class="totop"> 
+					    <a href="#top">Back to top</a> 
+					</p>
+
 				</div>
 
 				<div class="reviews-form">
