@@ -1047,3 +1047,10 @@ progress {
     display: inline-block;
     color: #FFCB00;
     padding-right: 2px; }
+
+
+
+.slideshow-nav .slide {
+  height: 80px;
+  width: 100px;
+}

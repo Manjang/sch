@@ -19,11 +19,19 @@
 		<div class="hotel">
 			
 			<div class="hotel-gallery">
-				<ul class="slideshow js-flickity" data-flickity-options='{ "autoPlay": 3500, "freeScroll": true, "pageDots": false, "wrapAround": true }'>
+				<ul class="slideshow slideshow-main js-flickity" data-flickity='{ "asNavFor": ".slideshow-main", "pageDots": false, "contain": true }' >
 					<li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel3.jpg);"></li>
 				</ul>
+
+				<ul class="slideshow slideshow-nav" data-flickity='{ "asNavFor": ".slideshow-main", "pageDots": false, "contain": true }'>
+				  	<li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li>
+				  	<li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
+				  	<li class="slide" style="background-image: url(../assets/hotel3.jpg);"></li>
+				</ul>
+
+
 
 				<div class="hotel-facilities">
 					<div class="hotel-facility">
