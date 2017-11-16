@@ -1,5 +1,4 @@
 
-
 	<footer>
 		<div class="widgets">
 			<div class="widgets-wrap">
@@ -19,7 +18,7 @@
 					<div class="mini-widget">
 						<span class="widget-title">Links</span>
 						<ul>
-							<li class="footer-link"><a href="#">Jow it works</a></li>
+							<li class="footer-link"><a href="#">How it works</a></li>
 							<li class="footer-link"><a href="#">Why Smiling Coast Hotels</a></li>
 							<li class="footer-link"><a href="#">About</a></li>
 							<li class="footer-link"><a href="#">Careers</a></li>
@@ -41,6 +40,34 @@
 
 		<div class="copyright">Copyright 2017 Smiling Coast Hotels. Web Design by <a target="_blank" href="http://www.quest.gm">Quest</a></div>
 	</footer>
+	
+
+	
+	<script>
+		$('.review-rating').raty({
+			readOnly: true,
+			score: function() {
+			    return $(this).attr('data-score');
+			},
+			path: '/assets/'
+		});
+	
+		$('#rating-form').raty({
+			path: '/assets/',
+			scoreName: 'rating'
+		});
+	
+	    var map;
+	    function initMap() {
+	        map = new google.maps.Map(document.getElementById('map'), {
+	          center: {lat: 13.449847, lng: -16.678759},
+	          zoom: 8
+	        });
+	    }
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3Y2YJTL3WSLbS7TineVdz8-rxkkt6b_E&callback=initMap"
+	async defer></script>
+
 </body>
 
 </html>

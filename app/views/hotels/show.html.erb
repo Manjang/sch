@@ -1,64 +1,191 @@
+	<div class="single-hotel-top">
+		<div class="single-hotel-top-wrap">
+			<span class="hotel-name"><%= @hotel.name %></span>
+			<span class="hotel-address"><%= @hotel.address %></span>
+			<span class="hotel-average-rating">Average Rating: 
 
+				<ul class="rate">
+					<li class="icon star"><i class="fa fa-star"></i></li>
+					<li class="icon star"><i class="fa fa-star"></i></li>
+					<li class="icon star"><i class="fa fa-star"></i></li>
+					<li class="icon star"><i class="fa fa-star"></i></li>
+					<li class="icon star"><i class="fa fa-star-half-o"></i></li>
+				</ul>
+			</span>
+		</div>
+	</div>
 
-	<h2><%= @hotel.name %></h2>
-	<h3><%= @hotel.address %></h3>
-	<p><%= @hotel.description %></p>
-
-
-
-<div class="row">
-	<div class="hotel-reviews">
-		<h1>Reviews</h1>
-		<% @review.each do |r| %>
-		<div class="review-rating" data-score="<%= r.rating %>" >
+	<div class="main-wrapper">
+		<div class="hotel">
 			
-		</div>	
-		 
+			<div class="hotel-gallery">
+				<ul class="slideshow js-flickity" data-flickity-options='{ "autoPlay": 3500, "freeScroll": true, "pageDots": false, "wrapAround": true }'>
+					<li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel3.jpg);"></li>
+				</ul>
 
-		<%= r.comment %>
-		<% end %>
-		
-		<div class="review-col">
-	<div class="hotel-review-form">
-		<h1>Write Your Review</h1>
+				<div class="hotel-facilities">
+					<div class="hotel-facility">
+						<div class="facility-icon"><i class="icon icon-cutlery"></i></div>
+						<div class="facility-name">Restaurant</div>
+					</div>
 
-		
-		
-		<form action="/hotels/add_review" method="post">
-			<div id="rating-form"  >
-				
-				<label>Rating</label>
+					<div class="hotel-facility">
+						<div class="facility-icon"><i class="icon icon-glass"></i></div>
+						<div class="facility-name">Bar/Lounge</div>
+					</div>
+
+					<div class="hotel-facility">
+						<div class="facility-icon"><i class="icon icon-music"></i></div>
+						<div class="facility-name">Music</div>
+					</div>
+
+					<div class="hotel-facility">
+						<div class="facility-icon"><i class="icon icon-flight"></i></div>
+						<div class="facility-name">Airport Pickup</div>
+					</div>
+
+					<div class="hotel-facility">
+						<div class="facility-icon"><i class="icon icon-house"></i></div>
+						<div class="facility-name">Room Service</div>
+					</div>
+				</div>
+
+				<div class="about-hotel">
+					<h2>About <%= @hotel.name %></h2>
+					<p><%= @hotel.description %></p>
+				</div>
+
+				<div class="reviews">
+					<div class="reviews-headline">Reviews</div>
+					<div class="reviews-wrap">
+						<% @review.each do |r| %>
+						<div class="review">
+							<div class="review-author">
+								<div class="review-author-thumbnail"><img src="../assets/johndoe.jpeg"></div>
+								<div class="review-author-name">John Doe</div>
+								<div class="review-rating" data-score="<%= r.rating %>" ></div>
+							</div>
+
+							<div class="review-content">
+								<%= r.comment %>
+							</div>
+						</div>
+						<% end %>
+					</div>
+				</div>
+
+				<div class="reviews-form">
+					<div class="reviews-form-wrap">
+						<form action="/hotels/add_review" method="post">
+							<input type="hidden" name="hotel_id" value="<%=@hotel.id%>">
+
+							<div class="reviews-form-inputs">
+								<input type="text" placeholder="First Name" name="review-author-fname">
+								<input type="text" placeholder="First Name" name="review-author-lname">
+							</div>
+
+							<div id="rating-form" name="rating">
+								<label>Rating</label>
+							</div>
+
+							<div class="review-message">
+								<textarea cols="10" rows="6" name="comment"></textarea>
+							</div>
+
+							<input type="submit" id="submit" value="Submit" class="btn" />
+						</form>
+					</div>
+				</div>
+
 			</div>
-			<input type="hidden" name="hotel_id" value="<%=@hotel.id%>">
-			<textarea name="comment"></textarea>
-			<!-- <button type="submit" name="submit" class="btn">Submit</button> -->
-			<input type="submit" id="submit" value="Submit" class="btn" />
-		</form>
 
+
+			<div class="hotel-sidebar">
+				<div class="google-map">
+					<div id="map"></div>
+				</div>
+
+				<div class="average-rating">
+					<div class="average-rating-bar">
+						<progress max="100" value="80"></progress>
+					</div>
+
+					<div class="average-rating-figure">
+						Average Rating: <span>4 Stars</span>
+					</div>
+				</div>
+
+				<div class="tripadvisor"></div>
+
+
+				<div class="select-room">
+					<div class="list-of-rooms">
+					    <ul class="hotel-rooms">
+						    <li class="hotel-room">
+						        <div class="room">
+							        <div class="room-details">
+							            <p class="room-type">Single Room</p>
+							            <p class="room-availability">Available</p>
+							        </div>
+							          
+							        <div class="add-room">
+							            <div class="price">D800</div>
+							            <div class="small">per night</div>
+							            <button class="btn">Select Room</button>
+							        </div>
+						        </div>
+						    </li>
+						      
+						    <li class="hotel-room">
+						        <div class="room">
+							        <div class="room-details">
+							            <p class="room-type">Standard Room</p>
+							            <p class="room-availability">Available</p>
+							        </div>
+							          
+							        <div class="add-room">
+							            <div class="price">D1,100</div>
+							            <div class="small">per night</div>
+							            <button class="btn">Select Room</button>
+							        </div>
+						        </div>
+						    </li>
+						      
+						    <li class="hotel-room">
+						        <div class="room">
+							        <div class="room-details">
+							            <p class="room-type">Double Room</p>
+							            <p class="room-availability">Available</p>
+							        </div>
+							          
+							        <div class="add-room">
+							            <div class="price">D1,300</div>
+							            <div class="small">per night</div>
+							            <button class="btn">Select Room</button>
+							        </div>
+						        </div>
+						    </li>
+						      
+						    <li class="hotel-room">
+						        <div class="room">
+							        <div class="room-details">
+							            <p class="room-type">Suite Room</p>
+							            <p class="room-availability">Available</p>
+							        </div>
+							          
+							        <div class="add-room">
+							            <div class="price">D1,700</div>
+							            <div class="small">per night</div>
+							            <button class="btn">Select Room</button>
+							        </div>
+						        </div>
+						    </li>.
+					    </ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
-</div>
-
-
-
-	</div>
-</div>
-
-
-
-
-<script>
-	$('.review-rating').raty({
-		readOnly: true,
-		score: function() {
-		    return $(this).attr('data-score');
-		},
-		path: '/assets/'
-	});
-</script>
-
-<script>
-	$('#rating-form').raty({
-		path: '/assets/',
-		scoreName: 'rating'
-	});
-</script>

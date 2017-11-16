@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
 	<meta charset="UTF-8">
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 	<title>Smiling Coast Hotels | Find &amp; Book Hotels in The Gambia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Smiling Coast Hotels is a platform that enables its users to find and book for hotels in The Gambia.">
 
+	<link rel="stylesheet" type="text/css" href="../assets/font-awesome.min.css">
 	<link rel="icon" type="image/png" href="../assets/logo.png">
+
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="../assets/flickity.pkgd.min.js"></script>
+	<script src="../assets/scripts.js"></script>
 	
 	<meta property="og:title" content="Smiling Coast Hotels | Find &amp; Book Hotels in The Gambia">
 	<meta property="og:site_name" content="Smiling Coast Hotels">
@@ -15,34 +24,41 @@
 	<meta property="og:description" content="Smiling Coast Hotels is a platform that enables its users to find and book for hotels in The Gambia">
 	<meta property="og:type" content="website">
 
-	 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-	<header class="top-header">
-		<a href="#" class="logo"><img src="../assets/logo.png"></a>
-
-		<nav>
-			<ul class="menu">
-				<li class="menu-item"><a href="#">Home</a></li>
-				<li class="menu-item"><a href="#">About Us</a></li>
-				<li class="menu-item"><a href="#">Contact Us</a></li>
-				<li class="menu-item border"><a href="#">Login In</a></li>
-				<li class="menu-item border btn-success"><a class="" href="#">Register</a></li>
-			</ul>
-		</nav>
-	</header>
+	<section class="navigation">
+		<div class="nav-container">
+		    <div class="brand">
+		      <a href="index.html"><img src="../assets/logo.png"></a>
+		    </div>
+		    <nav>
+			    <div class="nav-mobile"><a id="nav-toggle" href="#"><span></span></a></div>
+			    <ul class="nav-list">
+			        <li><a href="#">Home</a></li>
+			        <li><a href="#">About</a></li>
+			        <li><a href="#">FAQ</a></li>
+			        <li><a href="#">Contact</a></li>
+			        <li><a href="#" class="menu-active">Account</a>
+			          <ul class="nav-dropdown">
+			            <li><a href="#">Sign In</a></li>
+			            <li><a href="#">Create Account</a></li>
+			          </ul>
+			        </li>
+			    </ul>
+		    </nav>
+		</div>
+	</section>
 
 	<div class="hero">
-		<h1 class="headline">The Smiling Coast Hotels</h1>
-		<h2 class="sub-headline">Find and Book Hotels in The Gambia</h2>
+		<div class="hotel-search">
+			<h1 class="headline">The Smiling Coast Hotels</h1>
+			<h2 class="sub-headline">Find and Book Hotels in The Gambia</h2>
 
-		<div class="search-hotel">
-			<div class="search-group">
-				<input type="text" class="search-input" aria-label="..." placeholder="Search For a Hotel">
-	
-	            <button type="button" class="btn btn-success" >Search</button>
+			<div class="hotel-search-wrap">
+				<form action="#" method="POST">
+					<input type="text" class="hotel-search-input" placeholder="Search For a Hotel">
+				</form>
 			</div>
 		</div>
 	</div>
@@ -50,16 +66,16 @@
 	<div class="intro">
 		<h1>Hotels in The Gambia</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae turpis dignissim, iaculis ligula eget, laoreet erat. Duis tincidunt, sapien eu vehicula consectetur, nibh ligula maximus magna, venenatis luctus purus orci ac urna. Sed facilisis dapibus diam, malesuada efficitur sapien placerat sed. Nullam ut vestibulum elit. Etiam sit amet lobortis libero. Nulla tincidunt tellus elit, ut aliquam ex efficitur eget. Donec vitae tempus libero. Vestibulum sed auctor nibh.</p>		
-	</div> 
+	</div>
 
 
 
 
-	<div class="intro cta">
+	<div class="cta">
 		<h1>Are you a Hotel Owner in The Gambia?</h1>
 		<p>Have your Hotel Registered with us for <span>FREE</span></p>
 
-		<a href="#" class="btn btn-success">Register Now</a>		
+		<a href="signup.html" class="btn btn-success">Register Now</a>		
 	</div>
 
 	<div class="testimonials-row">
@@ -84,7 +100,7 @@
 				<img src="../assets/roots.png" alt="">
 			</div>
 		</div>
-	</div>
+	</div> 
 
 	<footer>
 		<div class="widgets">
@@ -105,7 +121,7 @@
 					<div class="mini-widget">
 						<span class="widget-title">Links</span>
 						<ul>
-							<li class="footer-link"><a href="#">Jow it works</a></li>
+							<li class="footer-link"><a href="#">How it works</a></li>
 							<li class="footer-link"><a href="#">Why Smiling Coast Hotels</a></li>
 							<li class="footer-link"><a href="#">About</a></li>
 							<li class="footer-link"><a href="#">Careers</a></li>

@@ -2,10 +2,25 @@
 <html>
   <head>
     <%= csrf_meta_tags %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    
+    <%= javascript_include_tag "application" %>
+
+    <meta charset="UTF-8">
+    <title>Smiling Coast Hotels | Find &amp; Book Hotels in The Gambia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smiling Coast Hotels is a platform that enables its users to find and book for hotels in The Gambia.">
+
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+
+    <meta property="og:title" content="Smiling Coast Hotels | Find &amp; Book Hotels in The Gambia">
+    <meta property="og:site_name" content="Smiling Coast Hotels">
+    <meta property="og:url" content="http://www.smilingcoasthotels.com">
+    <meta property="og:description" content="Smiling Coast Hotels is a platform that enables its users to find and book for hotels in The Gambia">
+    <meta property="og:type" content="website">
+
+  </head> 
 
   <body>
   	<% flash.each do |message_type, message| %>
@@ -13,7 +28,7 @@
     <% end %>
 
   	<%= render 'layouts/header' %>
-    <%= yield %>
+      <%= yield %>
   	<%= render 'layouts/footer' %>
 
   </body>
