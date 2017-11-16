@@ -2,9 +2,11 @@
 		<div class="single-hotel-top-wrap">
 			<span class="hotel-name"><%= @hotel.name %></span>
 			<span class="hotel-address"><%= @hotel.address %></span>
-			<span class="hotel-average-rating">Average Rating: 
 
-				<ul class="rate">
+			<span class="hotel-average-rating">
+				<span class="hotel-like"><img src="../assets/like.svg" width="30px"> <span class="likes"> 273 Likes</span></span>
+				
+				<ul class="rate">Average Rating: 
 					<li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
@@ -248,7 +250,7 @@
 						Average Rating: <span>4 Stars</span>
 					</div>
 				</div>
-				
+
 				<div class="google-map">
 					<div id="map"></div>
 				</div>
