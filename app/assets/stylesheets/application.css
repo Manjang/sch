@@ -915,7 +915,7 @@ progress[value]::-webkit-progress-bar {
         width: 100%; } }
   .hotel-sidebar {
     width: calc(40% - 30px);
-    margin: 0 auto; }
+    margin: 20px auto; }
     @media (max-width: 768px) {
       .hotel-sidebar {
         width: calc(100% - 10px);
@@ -1116,4 +1116,36 @@ progress {
   background-color: #33739E;
   text-decoration: none;
   display: block;
+}
+
+.search-room {
+  width: 100%;
+}
+
+.search-room-wrap form {
+  display: flex;
+  width: calc(100% - 25px);
+  margin: auto;
+}
+
+.checkin,
+.checkout,
+.budget {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100% / 3);
+}
+
+.checkin input,
+.checkout input,
+.budget input {
+  height: 30px;
+  padding: 0;
+}
+
+.checkin-label,
+.checkout-label,
+.budget-label {
+  font-size: 12px;
 }

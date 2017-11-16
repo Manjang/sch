@@ -150,24 +150,30 @@
 
 
 			<div class="hotel-sidebar">
-				<div class="google-map">
-					<div id="map"></div>
-				</div>
-
-				<div class="average-rating">
-					<div class="average-rating-bar">
-						<progress max="100" value="80"></progress>
-					</div>
-
-					<div class="average-rating-figure">
-						Average Rating: <span>4 Stars</span>
-					</div>
-				</div>
-
-				<div class="tripadvisor"></div>
-
 
 				<div class="select-room">
+					<div class="search-room">
+						<div class="search-room-wrap">
+						    <form action="#" method="POST">
+						      <div class="checkin">
+						        <div class="checkin-label">Check in date</div>
+						        <input type="date" name="checkin-date">
+						      </div>
+						      
+						      <div class="checkout">
+						        <div class="checkout-label">Check out date</div>
+						        <input type="date" name="checkout-date">
+						      </div>
+						      
+						      <div class="budget">
+						        <div class="budget-label">Budget</div>
+						        <input type="number" name="budget" placeholder="Budget">
+						      </div>
+						      
+						    </form>
+						</div>
+					</div>
+
 					<div class="list-of-rooms">
 					    <ul class="hotel-rooms">
 						    <li class="hotel-room">
@@ -232,6 +238,24 @@
 					    </ul>
 					</div>
 				</div>
+
+				<div class="average-rating">
+					<div class="average-rating-bar">
+						<progress max="100" value="80"></progress>
+					</div>
+
+					<div class="average-rating-figure">
+						Average Rating: <span>4 Stars</span>
+					</div>
+				</div>
+				
+				<div class="google-map">
+					<div id="map"></div>
+				</div>
+
+				<div class="tripadvisor"></div>
+
+
 			</div>
 
 		</div>
