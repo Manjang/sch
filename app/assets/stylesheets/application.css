@@ -1066,6 +1066,11 @@ progress {
     margin-bottom: 5px;
     background-color: #f1f1f1;
 }
+
+.review-wrap {
+  display: flex;
+}
+
 .totop {
     position: fixed;
     bottom: 10px;
@@ -1104,4 +1109,11 @@ progress {
 .reviews #loadMore:hover {
     background-color: #fff;
     color: #33739E;
+}
+
+.hotel-read-more {
+  color: #ffffff;
+  background-color: #33739E;
+  text-decoration: none;
+  display: block;
 }

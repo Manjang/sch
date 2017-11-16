@@ -76,7 +76,23 @@
 
 				<div class="about-hotel">
 					<h2>About <%= @hotel.name %></h2>
-					<p><%= @hotel.description %></p>
+					<p>
+					  <% if @hotel.description.length > 150 %>
+					    <%= truncate(@hotel.description, length: 150) %>
+					    <%= link_to 'Read more', '', class: "hotel-read-more read-more-#{@hotel.id}" %>
+					    <script>
+					      $('.read-more-<%= @hotel.id %>').on('click', function(e) {
+					        e.preventDefault()
+					        $(this).parent().html('<%= escape_javascript @hotel.description %>')
+					      })
+					    </script>
+					  <% else %>
+					    <%= @hotel.description %>
+					  <% end %>
+					<p>
+
+
+
 				</div>
 
 				<div class="reviews" id="reviews">
@@ -84,14 +100,16 @@
 					<div class="reviews-wrap">
 						<% @review.each do |r| %>
 						<div class="review">
-							<div class="review-author">
-								<div class="review-author-thumbnail"><img src="../assets/johndoe.jpeg"></div>
-								<div class="review-author-name">John Doe</div>
-								<div class="review-rating" data-score="<%= r.rating %>" ></div>
-							</div>
+							<div class="review-wrap">
+								<div class="review-author">
+									<div class="review-author-thumbnail"><img src="../assets/johndoe.jpeg"></div>
+									<div class="review-author-name">John Doe</div>
+									<div class="review-rating" data-score="<%= r.rating %>" ></div>
+								</div>
 
-							<div class="review-content">
-								<%= r.comment %>
+								<div class="review-content">
+									<%= r.comment %>
+								</div>
 							</div>
 						</div>
 						<% end %>
