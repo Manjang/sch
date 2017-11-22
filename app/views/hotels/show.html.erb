@@ -6,12 +6,12 @@
 			<span class="hotel-average-rating">
 				<span class="hotel-like"><img src="../assets/like.svg" width="30px"> <span class="likes"> 273 Likes</span></span>
 				
-				<ul class="rate">Average Rating: 
+				<ul class="rate">Average Rating: <%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%>
+					<!-- <li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
-					<li class="icon star"><i class="fa fa-star"></i></li>
-					<li class="icon star"><i class="fa fa-star-half-o"></i></li>
+					<li class="icon star"><i class="fa fa-star-half-o"></i></li> -->
 				</ul>
 			</span>
 		</div>
@@ -243,11 +243,11 @@
 
 				<div class="average-rating">
 					<div class="average-rating-bar">
-						<progress max="100" value="80"></progress>
+						<progress max="5.0" value="<%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%>"></progress>
 					</div>
 
 					<div class="average-rating-figure">
-						Average Rating: <span>4 Stars</span>
+						Average Rating: <span><%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%></span>
 					</div>
 				</div>
 
