@@ -1049,6 +1049,7 @@ progress {
 
 
 
+
 .slideshow-nav .slide {
   height: 80px;
   width: 100px;
@@ -1112,10 +1113,8 @@ progress {
 }
 
 .hotel-read-more {
-  color: #ffffff;
-  background-color: #33739E;
-  text-decoration: none;
-  display: block;
+  color: #33739E;
+  font-weight: 400;
 }
 
 .search-room {
@@ -1168,4 +1167,63 @@ progress {
 .hotel-like img {
     cursor: pointer;
     margin-right: 5px;
+}
+
+
+
+
+
+/* Similar Hotels */
+.similar-hotels {
+  margin: 30px 0;
+}
+
+.similar-hotels-headline {
+    max-width: 1250px;
+    margin: 10px auto;
+}
+
+.similar-hotels-wrap {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.similar-hotel {
+    width: calc(25% - 20px);
+    margin: auto;
+    min-height: 325px;
+    border-radius: 11px;
+    background-color: #f1f1f1;
+}
+
+.similar-hotel-wrap {
+    padding: 20px;
+}
+
+.similar-hotels-wrap .flickity-viewport {
+  width: 100%;
+}
+
+.similar-hotel-name {
+    display: block;
+    color: #33739e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.similar-hotel-thumbnail {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.similar-hotel-feedbacks {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
 }
