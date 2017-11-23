@@ -1192,11 +1192,12 @@ progress {
 }
 
 .similar-hotel {
-    width: calc(25% - 20px);
-    margin: auto;
+    width: 250px;
+    margin: 5px;
     min-height: 325px;
     border-radius: 11px;
     background-color: #f1f1f1;
+    list-style: none;
 }
 
 @media (max-width: 1024px) {
