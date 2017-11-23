@@ -77,4 +77,24 @@ jQuery(document).ready(function($){
 	  }); // end DOM ready
 
 
+
+
+
+	//Reviews Load More  
+	$(function () {
+	    $("#reviews .review").slice(0, 2).show();
+	    $("#loadMore").on('click', function (e) {
+	        e.preventDefault();
+	        $("#reviews .review:hidden").slice(0, 2).slideDown();
+	        if ($("#reviews .review:hidden").length == 0) {
+	            $("#load").fadeOut('slow');
+	        }
+	        $('html,body').animate({
+	            scrollTop: $(this).offset().top
+	        }, 1500);
+	    });
+	});
+
+
+
 });

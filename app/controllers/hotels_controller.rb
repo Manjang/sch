@@ -7,6 +7,7 @@ class HotelsController < ApplicationController
 
 	def index
 		@hotels = Hotel.all.order("created_at ASC")
+		@hotels = Hotel.search(params[:search])
 	end
 
 	def show
