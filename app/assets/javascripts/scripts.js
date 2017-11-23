@@ -96,5 +96,38 @@ jQuery(document).ready(function($){
 	});
 
 
-
 });
+
+
+// Checkin and Checkout date calculations
+$(document).ready(function() {
+  
+	$( "#startdate, #enddate" ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+		firstDay: 1,
+		dateFormat: 'dd/mm/yy',
+	})
+
+	$( "#startdate" ).datepicker({ dateFormat: 'dd-mm-yy' });
+	$( "#enddate" ).datepicker({ dateFormat: 'dd-mm-yy' });
+
+	$('#enddate').change(function() {
+	    const start = $('#startdate').datepicker('getDate');
+	    const end   = $('#enddate').datepicker('getDate');
+
+		if (start < end) {
+		    const days   = (end - start)/1000/60/60/24;
+			$('#days').val(days);
+
+			const totalRoomPrice = days * 800;
+			$('#totalRoomPrice').val(totalRoomPrice);
+		}
+		else {
+		  	alert ("You cant come back before you have been!");
+		  	$('#startdate').val("");
+		  	$('#enddate').val("");
+		    $('#days').val("");
+		}
+	}); //end change function
+}); //end ready

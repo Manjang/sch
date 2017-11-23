@@ -545,11 +545,13 @@ progress[value]::-webkit-progress-bar {
 
 .btn {
   display: inline-block;
-  padding: 15px 35px;
+  padding: 12px 25px;
   border-radius: 5px;
   font-size: 19px;
   border-color: transparent;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer;
+  outline: none; }
 
 .btn-success {
   color: #fff;
@@ -947,7 +949,9 @@ progress[value]::-webkit-progress-bar {
   margin-top: -1px;
   min-height: 400px;
   margin-bottom: 35px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto; }
   @media (max-width: 768px) {
     .select-room {
       width: 100%;
@@ -1184,6 +1188,7 @@ progress {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+    flex-flow: row wrap;
 }
 
 .similar-hotel {
@@ -1192,6 +1197,19 @@ progress {
     min-height: 325px;
     border-radius: 11px;
     background-color: #f1f1f1;
+}
+
+@media (max-width: 1024px) {
+  .similar-hotel {
+    width: calc(50% - 30px);
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .similar-hotel {
+    width: calc(100% - 30px);
+  }
 }
 
 .similar-hotel-wrap {
@@ -1279,4 +1297,21 @@ progress {
 .facilities h4 {
   color: #0b677d;
   font-weight: 600;
+}
+
+input#days,
+input#totalRoomPrice {
+    border: transparent;
+    width: 60px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.booking-sumary-wrap {
+    text-align: center;
+}
+
+.book-now {
+    text-align: center;
+    margin: 20px 0;
 }

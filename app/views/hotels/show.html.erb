@@ -7,7 +7,7 @@
 			<span class="hotel-average-rating">
 				<span class="hotel-like"><img src="../assets/like.svg" width="30px"> <span class="likes"> 273 Likes</span></span>
 				
-				<ul class="rate">Average Rating: <%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%>
+				<ul class="rate">Average Rating: <%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%> out of 5
 					<!-- <li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
@@ -168,12 +168,14 @@
 						    <form action="#" method="POST">
 						      <div class="checkin">
 						        <div class="checkin-label">Check in date</div>
-						        <input type="date" name="checkin-date">
+						        <!-- <input type="date" name="checkin-date" id="startdate"> -->
+						        <input type="text"  placeholder="dd/mm/yyyy" id="startdate">
 						      </div>
 						      
 						      <div class="checkout">
 						        <div class="checkout-label">Check out date</div>
-						        <input type="date" name="checkout-date">
+						        <!-- <input type="date" name="checkout-date" id="enddate"> -->
+						        <input type="text" placeholder="dd/mm/yyyy" id="enddate">
 						      </div>
 						    </form>
 						</div>
@@ -189,7 +191,7 @@
 							        </div>
 							          
 							        <div class="add-room">
-							            <div class="price">D800</div>
+							            <div class="price" id="room-price">D800</div>
 							            <div class="small">per night</div>
 							            <button class="btn">Select Room</button>
 							        </div>
@@ -244,13 +246,25 @@
 					</div>
 				</div>
 
+				<div class="booking-sumary">
+					<div class="booking-sumary-wrap">
+						<span class="total-rooms">1 Room </span>, 
+						<input type="text" id="days" readonly> Nights,
+						Total GMD<input type="text" id="totalRoomPrice" readonly>
+					</div>
+
+					<div class="book-now">
+						<button class="btn">Book Now</button>
+					</div>
+				</div>
+
 				<div class="average-rating">
 					<div class="average-rating-bar">
 						<progress max="5.0" value="<%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%>"></progress>
 					</div>
 
 					<div class="average-rating-figure">
-						Average Rating: <span><%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%></span>
+						Average Rating: <span><%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%></span> out of 5
 					</div>
 				</div>
 
