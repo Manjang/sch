@@ -1257,3 +1257,26 @@ progress {
     margin-top: 5px;
   }
 }
+
+.ui-state-default {
+  color: #0b677d !important;
+}
+
+.ui-state-active {
+  border: 1px solid #0b677d !important;
+  background: #0b677d !important;
+  color: #ffffff !important;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding: 10px !important;
+}
+
+.facilities {
+  margin-top: 50px;
+}
+
+.facilities h4 {
+  color: #0b677d;
+  font-weight: 600;
+}

@@ -50,52 +50,64 @@
 
 
 
-				<div class="hotel-facilities">
-					<div class="hotel-facility">
-						<div class="facility-icon"><i class="icon icon-cutlery"></i></div>
-						<div class="facility-name">Restaurant</div>
-					</div>
-
-					<div class="hotel-facility">
-						<div class="facility-icon"><i class="icon icon-glass"></i></div>
-						<div class="facility-name">Bar/Lounge</div>
-					</div>
-
-					<div class="hotel-facility">
-						<div class="facility-icon"><i class="icon icon-music"></i></div>
-						<div class="facility-name">Music</div>
-					</div>
-
-					<div class="hotel-facility">
-						<div class="facility-icon"><i class="icon icon-flight"></i></div>
-						<div class="facility-name">Airport Pickup</div>
-					</div>
-
-					<div class="hotel-facility">
-						<div class="facility-icon"><i class="icon icon-house"></i></div>
-						<div class="facility-name">Room Service</div>
-					</div>
-				</div>
-
 				<div class="about-hotel">
-					<h2>About <%= @hotel.name %></h2>
-					<p>
-					  <% if @hotel.description.length > 150 %>
-					    <%= truncate(@hotel.description, length: 150) %>
-					    <%= link_to 'Read more', '', class: "hotel-read-more read-more-#{@hotel.id}" %>
-					    <script>
-					      $('.read-more-<%= @hotel.id %>').on('click', function(e) {
-					        e.preventDefault()
-					        $(this).parent().html('<%= escape_javascript @hotel.description %>')
-					      })
-					    </script>
-					  <% else %>
-					    <%= @hotel.description %>
-					  <% end %>
-					<p>
+					<div id="accordion">
+						<h3>About <%= @hotel.name %> </h3>
+						<div>
+							<p>
+								<% if @hotel.description.length > 150 %>
+								    <%= truncate(@hotel.description, length: 150) %>
+								    <%= link_to 'Read more', '', class: "hotel-read-more read-more-#{@hotel.id}" %>
+								    <script>
+								      $('.read-more-<%= @hotel.id %>').on('click', function(e) {
+								        e.preventDefault()
+								        $(this).parent().html('<%= escape_javascript @hotel.description %>')
+								      })
+								    </script>
+								<% else %>
+								    <%= @hotel.description %>
+								<% end %>
 
 
+								<div class="facilities">
+									<h4>HOTEL FACILITIES</h4>
+									<div class="hotel-facilities">
+										<div class="hotel-facility">
+											<div class="facility-icon"><i class="icon icon-cutlery"></i></div>
+											<div class="facility-name">Restaurant</div>
+										</div>
 
+										<div class="hotel-facility">
+											<div class="facility-icon"><i class="icon icon-glass"></i></div>
+											<div class="facility-name">Bar/Lounge</div>
+										</div>
+
+										<div class="hotel-facility">
+											<div class="facility-icon"><i class="icon icon-music"></i></div>
+											<div class="facility-name">Music</div>
+										</div>
+
+										<div class="hotel-facility">
+											<div class="facility-icon"><i class="icon icon-flight"></i></div>
+											<div class="facility-name">Airport Pickup</div>
+										</div>
+
+										<div class="hotel-facility">
+											<div class="facility-icon"><i class="icon icon-house"></i></div>
+											<div class="facility-name">Room Service</div>
+										</div>
+									</div>
+								</div>
+							</p>
+						</div>
+
+						<h3><%= @hotel.name %> Video</h3>
+						<div>
+							<p>
+								<iframe src="http://www.youtube.com/embed/W7qWa52k-nE" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+							</p>
+						</div>
+					</div>
 				</div>
 
 				<div class="reviews" id="reviews">

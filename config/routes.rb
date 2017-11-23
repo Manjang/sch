@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root  'hotels#index'
   get	'hotels/index'
   get	'hotels/show'
-  post "reviews/create"
-  post 'hotels/add_review'
+  post 	'reviews/create'
+  post 	'hotels/add_review'
   # resources :hotels 
   # resources :reviews
   
