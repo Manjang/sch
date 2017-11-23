@@ -942,11 +942,12 @@ progress[value]::-webkit-progress-bar {
 .select-room {
   width: calc(100% - 30px);
   max-width: 430px;
-  background-color: #fafafa;
+  background-color: #f1f1f1;
   border: 1px solid #e2e6e9;
   margin-top: -1px;
   min-height: 400px;
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  border-radius: 5px; }
   @media (max-width: 768px) {
     .select-room {
       width: 100%;
@@ -1127,24 +1128,21 @@ progress {
 }
 
 .checkin,
-.checkout,
-.budget {
+.checkout {
   height: 70px;
   display: flex;
   flex-direction: column;
-  max-width: calc(100% / 3);
+  width: 50%;
 }
 
 .checkin input,
-.checkout input,
-.budget input {
+.checkout input {
   height: 30px;
   padding: 0;
 }
 
 .checkin-label,
-.checkout-label,
-.budget-label {
+.checkout-label {
   font-size: 12px;
 }
 
