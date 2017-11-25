@@ -28,7 +28,7 @@
 		<div class="hotels-row">
 			<% @hotels.each do |hotel| %>
 				<div class="hotel-card">
-          <%= image_tag("hotel1.jpg", alt: "Gambia Hotels") %>
+          			<%= image_tag("hotel1.jpg", alt: "Gambia Hotels") %>
 					<div class="hotel-desc">
 						<%= link_to hotel.name, { :controller => 'hotels', :action => 'show', :id => hotel.id }, :method => :get, class: "hotel-name" %>
 						<span><%= truncate(hotel.description, :length => 80)  %></span>

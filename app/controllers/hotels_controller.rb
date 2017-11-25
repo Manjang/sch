@@ -64,6 +64,11 @@ class HotelsController < ApplicationController
 	end
 
 
+	def about
+	    @about = Hotel.where(about: true)
+	end
+
+
 	private
 
 	# def hotel_params
