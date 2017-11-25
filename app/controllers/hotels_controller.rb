@@ -68,6 +68,10 @@ class HotelsController < ApplicationController
 	    @about = Hotel.where(about: true)
 	end
 
+	def faq
+	    @faq = Hotel.where(faq: true)
+	end
+
 
 	private
 

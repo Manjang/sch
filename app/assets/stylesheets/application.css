@@ -356,7 +356,8 @@ article {
 .recognized-by-text {
   position: relative;
   font-size: 30px;
-  width: 40%; }
+  width: 40%;
+  line-height: 30px; }
   @media (max-width: 1300px) {
     .recognized-by-text {
       width: 100%;
@@ -1320,7 +1321,7 @@ input#totalRoomPrice {
 
 /* About Us */
 .banner {
-  background-image: url(../../assets/hotel2.jpg);
+  background-image: url(../../assets/gambia-tourism.jpg);
   width: 100%;
   height: 300px;
   position: relative;
@@ -1334,7 +1335,7 @@ input#totalRoomPrice {
   position: absolute;
   left: 0; right: 0;
   top: 0; bottom: 0;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, .7);
 }
 
 .banner-wrap {
@@ -1356,6 +1357,7 @@ input#totalRoomPrice {
 
 .content {
     width: calc(100% - 30px);
+    max-width: 1200px;
     margin: auto;
     display: flex;
     flex-flow: row wrap;
@@ -1373,7 +1375,7 @@ input#totalRoomPrice {
   .content {
     text-align: center;
   }
-  
+
   .content ~ .content {
     flex-direction: column-reverse;
   }
@@ -1384,8 +1386,7 @@ input#totalRoomPrice {
   }
 }
 
-.content-right h2,
-.content-left h2 {
+.content h2 {
   text-align: center;
 }
 
@@ -1404,4 +1405,42 @@ input#totalRoomPrice {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.about-slider {
+  width: 100%;
+}
+
+
+
+/* FAQ Page */
+.faq-content {
+  margin: 35px auto;
+}
+
+.faq {
+    width: calc(70% - 20px);
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: calc(30% - 20px);
+    margin: 0 auto 30px;
+}
+
+.most-viewed-hotels h3 {
+  text-align: center;
+}
+
+.sidebar .hotels-row,
+.sidebar .hotel-card {
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .faq,
+  .sidebar {
+    width: calc(100% - 30px);
+    margin: 30px auto;
+  }
 }
