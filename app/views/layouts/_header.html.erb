@@ -8,9 +8,9 @@
 		    <nav>
 			    <div class="nav-mobile"><a id="nav-toggle" ><span></span></a></div>
 			    <ul class="nav-list">
-			        <li><a >Home</a></li>
-			        <li><a >About</a></li>
-			        <li><a >FAQ</a></li>
+			        <li><%= link_to 'Home', root_path, method: :get %></li>
+			        <li><%= link_to 'About', hotels_about_path, method: :get %></li>
+			        <li><%= link_to 'FAQ', hotels_faq_path, method: :get %></li>
 			        <li><a >Contact</a></li>
 			        <li><a class="menu-active">Account</a>
 			          <ul class="nav-dropdown">

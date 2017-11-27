@@ -4,12 +4,14 @@ Rails.application.routes.draw do
   # get '/hotels/about' => 'hotels#about'
   # resources :hotels
 
-  get '/hotels/faq' => 'hotels#faq'
-  resources :hotels
+  # get '/hotels/faq' => 'hotels#faq'
+  # resources :hotels
 
   root  'hotels#index'
   get	'hotels/index'
   get	'hotels/show'
+  get 'hotels/about'
+  get 'hotels/faq'
   post 	'reviews/create'
   post 	'hotels/add_review'
   # resources :hotels 

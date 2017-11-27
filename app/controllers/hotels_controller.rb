@@ -7,7 +7,7 @@ class HotelsController < ApplicationController
 
 	def index
 		@hotels = Hotel.all.order("created_at ASC")
-		@hotels = Hotel.search(params[:search])
+		# @hotels = Hotel.search(params[:id])
 	end
 
 	def show
@@ -43,7 +43,12 @@ class HotelsController < ApplicationController
 			render 'new'
 		end
 	end
-
+	def about
+		
+	end
+	def faq
+		
+	end
 	def edit
 		@categories = Category.all.map{ |c| [c.name, c.id] }
 	end
