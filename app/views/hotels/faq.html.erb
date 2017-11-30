@@ -78,24 +78,76 @@
 		<div class="sidebar">
 			<div class="most-viewed-hotels">
 
-				<div class="hotels-row">
-					<div class="hotel-card">
-	          			<%= image_tag("hotel1.jpg", alt: "Gambia Hotels") %>
-						<div class="hotel-desc">
-							<div class="hotel-name">Kairaba Beach Hotel</div>
-							<span>
-								Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse auctor sem dapibus mi finibus pharetra.
-							</span>
-							<ul class="rate">
-								<li class="icon star"><i class="fa fa-star"></i></li>
-								<li class="icon star"><i class="fa fa-star"></i></li>
-								<li class="icon star"><i class="fa fa-star"></i></li>
-								<li class="icon star"><i class="fa fa-star"></i></li>
-								<li class="icon star"><i class="fa fa-star-half-o"></i></li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<div class="booking-widget">
+	                <div class='booking-widget__header'>
+	                    <figure>
+	                      <div class="hotel-thumbnail"></div>
+	                      <figcaption class='header-caption'>
+	                        <h3 id="">Kairaba Beach Hotel</h3>
+	                        <span id=""><i class="fa fa-map-marker" aria-hidden="true"></i>PMB 390 – Serrekunda, The Gambia</span>
+	                      </figcaption>         
+	                    </figure>
+	                </div>
+	                <form>
+	                    <ul class='booking-widget__form'>
+	                        <li>
+	                            <label for='check-in'>Check in</label>
+	                            <div id='check-in' class='form-field'>
+	                                <input type="text" value="" placeholder="9 July, 2016">
+	                                <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <label for='check-in'>Check out</label>
+	                            <div id='check-out' class='form-field'>
+	                                <input type="text" value="" placeholder="19 July, 2016">
+	                                <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
+	                            </div>
+	                        </li>
+	                        <li>
+	                          <div class=' form-field form-field__checkbox'>
+	                            <input type="checkbox" id='flexibleDates' value="">
+	                          </div>
+	                            <label for="flexibleDates">Flexible dates</label>
+	                        </li>
+	                        <li>
+	                            <div class='form__dropdown'>
+	                                <label for='adultsAmount'>Adults</label>
+	                                <div class='form-field'> 
+	                                <select id='adultsAmount'>    
+	                                        <option value="1">1</option>
+	                                        <option value="2">2</option>
+	                                        <option value="3">3</option>
+	                                        <option value="4">4</option>
+	                                        <option value="5">5</option>
+	                                        <option value="6">6</option>
+	                                </select>
+	                                <div class='select-button'><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+	                            </div>
+	                            </div>
+	                            <div class='form__dropdown'>
+	                                <label for='childrenAmount'>Children</label>
+	                                <br>
+	                              <div class='form-field'> 
+	                                <select id='childrenAmount'> 
+	                                        <option value="0" selected="selected"></option>                        
+	                                        <option value="1">1</option>
+	                                        <option value="2">2</option>
+	                                        <option value="3">3</option>
+	                                        <option value="4">4</option>
+	                                        <option value="5">5</option>
+	                                        <option value="6">6</option>
+	                                </select>
+	                                <div class='select-button'><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <input type="submit" id='bookingSubmit' class='form__submit' value='Search rooms'>
+	                        </li>
+	                    </ul>       
+	                </form>
+            	</div>
 			 
 			</div>
 		</div>

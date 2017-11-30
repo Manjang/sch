@@ -96,6 +96,19 @@ jQuery(document).ready(function($){
 	});
 
 
+	$(".select-room-btn").click(function(e) {
+		e.preventDefault();
+		$("#booking-sumary").css("display", "block");
+	});
+
+
+	//Toggles the Review form
+	$("#review-form").hide();
+    $("#show-review-form").on("click",function(){
+        $("#review-form").toggle();
+    });
+
+
 });
 
 

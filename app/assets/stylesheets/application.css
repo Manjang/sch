@@ -12,8 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
+@import "font-awesome";
 
 @import url("https://fonts.googleapis.com/css?family=Dosis|Ubuntu:500");
 @import url("https://fonts.googleapis.com/css?family=Barlow:100,400,700");
@@ -1117,6 +1119,12 @@ progress {
     color: #33739E;
 }
 
+#show-review-form {
+    cursor: pointer;
+    color: #33739e;
+    font-weight: 700;
+}
+
 .hotel-read-more {
   color: #33739E;
   font-weight: 400;
@@ -1192,6 +1200,7 @@ progress {
 .similar-hotels-wrap {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0;
     display: flex;
     flex-flow: row wrap;
 }
@@ -1311,6 +1320,10 @@ input#totalRoomPrice {
     width: 60px;
     font-size: 17px;
     text-align: center;
+}
+
+#booking-sumary {
+  display: none;
 }
 
 .booking-sumary-wrap {
@@ -1447,4 +1460,185 @@ input#totalRoomPrice {
     width: calc(100% - 30px);
     margin: 30px auto;
   }
+}
+
+
+
+/* Sidebar Booking Widget */
+
+.sidebar .booking-widget {
+  margin: 20px auto;
+}
+
+.sidebar .booking-widget {
+  box-sizing: border-box;
+  width: 345px;
+  min-height: 605px;
+  padding-bottom: 1px;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .44);
+}
+
+.sidebar .booking-widget__header {
+  width: 100%;
+  height: 185px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, .44);
+}
+
+.sidebar .booking-widget__header figure {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .header-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  color: white;
+}
+
+.sidebar .header-caption h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+}
+
+.sidebar .booking-widget__form {
+  list-style-type: none;
+  padding: 0 25px 0 25px;
+  margin: 0;
+}
+
+.sidebar .booking-widget__form li {
+  margin: 25px 0;
+}
+
+.sidebar .form-field {
+  position: relative;
+  background-color: #f4f4f4;
+  margin-top: 10px;
+  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar .form-field__checkbox {
+  display: inline-block;
+  width: 20px;
+}
+
+.sidebar .form-field__checkbox input[type='checkbox'] {
+  width: 100%;
+  opacity: .0;
+}
+
+.sidebar .form-field__checkbox input[type='checkbox']:checked {
+  opacity: 1;
+}
+
+
+.sidebar .form-field label {
+  color: #666666;
+} 
+
+.sidebar .datepicker, .sidebar .select-button {
+  box-sizing: border-box;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 38px;
+  height: 38px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 38px;
+  background-color: #414b59;
+  color: white;
+}
+
+.sidebar .form-field input[type='text'],
+.sidebar .form__dropdown select {
+  height: 45px;
+  width: 100%;
+  padding: 0 0 0 3px;
+  background-color: #f4f4f4;
+  border: none;
+}
+
+.sidebar .form__dropdown {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 45%;
+  padding: 5px;
+}
+
+.sidebar .form__dropdown:last-child {
+  float: right;
+}
+
+.sidebar .form__submit {
+  width: 100%;
+  height: 58px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  background-color: #fb6362;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0px 1px 1px 0 darkgrey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Home Search Bar */
+.search-fields .ui-widget {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.search-fields .custom-combobox {
+  width: 80%;
+}
+
+
+@media (max-width: 678px) {
+
+  .search-fields .custom-combobox,
+  .search-fields input[type="submit"],
+  .search-fields .custom-combobox-input { 
+    width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.search-fields .custom-combobox-input {
+  width: calc(100% - 30px);
+  height: 40px;
+  border-radius: 5px;
+}
+
+.search-fields input[type="submit"] {
+  width: 20%;
+}
+
+.hotel-thumbnail {
+  background-image: url(../../assets/hotel9.jpg);
+  width: 100%;
+  height: 185px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hotel-thumbnail:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .7);
 }
