@@ -87,8 +87,15 @@ class HotelsController < ApplicationController
 	end
 
 	def login_register
+<<<<<<< HEAD
  	    @login_register = Hotel.where(login_register: true)
 	end
+=======
+	    @login_register = Hotel.where(login_register: true)
+	end
+
+
+>>>>>>> 459fce69e048652e14939d1e37cc4d0ca6a6781e
 	private
 
 	# def hotel_params

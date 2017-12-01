@@ -7,6 +7,7 @@
 			<span class="hotel-average-rating">
 				<span class="hotel-like"><img src="../assets/like.svg" width="30px"> <span class="likes"> 273 Likes</span></span>
 				
+<<<<<<< HEAD
 				<ul class="rate">Average Rating: <%= @avg_review%> out of 5
 					<!-- <li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
@@ -14,6 +15,10 @@
 					<li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star-half-o"></i></li> -->
 				</ul>
+=======
+				<span>Average Rating: <div class="review-rating" data-score="<%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%>" ></div></span>
+				
+>>>>>>> 459fce69e048652e14939d1e37cc4d0ca6a6781e
 			</span>
 		</div>
 	</div>
@@ -137,7 +142,8 @@
 
 				</div>
 
-				<div class="reviews-form">
+				<div id="show-review-form">Add a Review</div>
+				<div class="reviews-form" id="review-form">
 					<div class="reviews-form-wrap">
 						<form action="/hotels/add_review" method="post">
 							<input type="hidden" name="hotel_id" value="<%=@hotel.id%>">
@@ -196,7 +202,7 @@
 							        <div class="add-room">
 							            <div class="price" id="room-price">GMD800</div>
 							            <div class="small">per night</div>
-							            <button class="btn">Select Room</button>
+							            <button class="btn select-room-btn">Select Room</button>
 							        </div>
 						        </div>
 						    </li>
@@ -211,7 +217,7 @@
 							        <div class="add-room">
 							            <div class="price">GMD1,100</div>
 							            <div class="small">per night</div>
-							            <button class="btn">Select Room</button>
+							            <button class="btn select-room-btn">Select Room</button>
 							        </div>
 						        </div>
 						    </li>
@@ -226,7 +232,7 @@
 							        <div class="add-room">
 							            <div class="price">GMD1,300</div>
 							            <div class="small">per night</div>
-							            <button class="btn">Select Room</button>
+							            <button class="btn select-room-btn">Select Room</button>
 							        </div>
 						        </div>
 						    </li>
@@ -241,7 +247,7 @@
 							        <div class="add-room">
 							            <div class="price">GMD1,700</div>
 							            <div class="small">per night</div>
-							            <button class="btn">Select Room</button>
+							            <button class="btn select-room-btn">Select Room</button>
 							        </div>
 						        </div>
 						    </li>.
@@ -249,7 +255,7 @@
 					</div>
 				</div>
 
-				<div class="booking-sumary">
+				<div class="booking-sumary" id="booking-sumary">
 					<div class="booking-sumary-wrap">
 						<span class="total-rooms">1 Room </span>, 
 						<input type="text" id="days" readonly> Nights,

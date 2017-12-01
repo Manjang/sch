@@ -25,10 +25,14 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+<<<<<<< HEAD
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
 # gem 'paperclip', '~> 5.1'
+=======
+gem 'paperclip', '~> 5.1'
+>>>>>>> 459fce69e048652e14939d1e37cc4d0ca6a6781e
 gem "font-awesome-rails"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
