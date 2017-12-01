@@ -1,3 +1,4 @@
+
 jQuery(document).ready(function($){
 	
 
@@ -94,6 +95,19 @@ jQuery(document).ready(function($){
 	        }, 1500);
 	    });
 	});
+
+
+	$(".select-room-btn").click(function(e) {
+		e.preventDefault();
+		$("#booking-sumary").css("display", "block");
+	});
+
+
+	//Toggles the Review form
+	$("#review-form").hide();
+    $("#show-review-form").on("click",function(){
+        $("#review-form").toggle();
+    });
 
 
 });

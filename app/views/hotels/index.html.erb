@@ -164,12 +164,12 @@
 			<h2 class="sub-headline">Find and Book Hotels in The Gambia</h2>
 
 			<div class="hotel-search-wrap">
-				<%= form_tag root_path, :method => 'get' do %>
+				
           <div class="search-fields">
-	          <form action="/cashpower/search_result">
+	          <form action="/hotels/show">
 	          	<div class="ui-widget">
 		            <select name ="id" id="combobox" required="required">
-		                  		<option value="" disabled selected>Select Site Name</option>
+		                  		<option value="" disabled selected>Search Hotel</option>
 		                    		<% @hotels.each do |nam| %>
 		                 		 <option value="<%= nam.id %>"><%= nam.name%></option> 
 		                    	<%end%>
@@ -178,7 +178,6 @@
 	        	</div>
 	          </div>
 	         </form>
-        <% end %>
 			</div>
 		</div>
 	</div>
@@ -195,7 +194,7 @@
 		<div class="hotels-row">
 			<% @hotels.each do |hotel| %>
 				<div class="hotel-card">
-          			<%= image_tag("hotel1.jpg", alt: "Gambia Hotels") %>
+          			<%= image_tag hotel.hotel_image.to_s %>
 					<div class="hotel-desc">
 						<%= link_to hotel.name, { :controller => 'hotels', :action => 'show', :id => hotel.id }, :method => :get, class: "hotel-name" %>
 						<span><%= truncate(hotel.description, :length => 80)  %></span>

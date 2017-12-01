@@ -7,7 +7,7 @@
 			<span class="hotel-average-rating">
 				<span class="hotel-like"><img src="../assets/like.svg" width="30px"> <span class="likes"> 273 Likes</span></span>
 				
-				<ul class="rate">Average Rating: <%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%> out of 5
+				<ul class="rate">Average Rating: <%= @avg_review%> out of 5
 					<!-- <li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
 					<li class="icon star"><i class="fa fa-star"></i></li>
@@ -23,8 +23,11 @@
 			
 			<div class="hotel-gallery">
 				<ul class="slideshow slideshow-main js-flickity" data-flickity='{ "asNavFor": ".slideshow-main", "pageDots": false, "contain": true }' >
-					<li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
+					<% @images.each do |i| %>
+					<li class="slide" style="background-image: url()"><%= image_tag i.image_name.to_s,  width: '100%', height: '100%' %></li>
+					<%end%>
+					<!-- <li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li> -->
+					<!-- <li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel3.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel4.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel5.jpg);"></li>
@@ -32,7 +35,7 @@
 					<li class="slide" style="background-image: url(../assets/hotel7.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel8.jpg);"></li>
 					<li class="slide" style="background-image: url(../assets/hotel9.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel10.jpg);"></li>
+					<li class="slide" style="background-image: url(../assets/hotel10.jpg);"></li> -->
 				</ul>
 
 				<ul class="slideshow slideshow-nav" data-flickity='{ "asNavFor": ".slideshow-main", "pageDots": false, "contain": true }'>
@@ -141,7 +144,7 @@
 
 							<div class="reviews-form-inputs">
 								<input type="text" placeholder="First Name" name="review-author-fname">
-								<input type="text" placeholder="First Name" name="review-author-lname">
+								<input type="text" placeholder="Last Name" name="review-author-lname">
 							</div>
 
 							<div id="rating-form" name="rating">
@@ -191,7 +194,7 @@
 							        </div>
 							          
 							        <div class="add-room">
-							            <div class="price" id="room-price">D800</div>
+							            <div class="price" id="room-price">GMD800</div>
 							            <div class="small">per night</div>
 							            <button class="btn">Select Room</button>
 							        </div>
@@ -206,7 +209,7 @@
 							        </div>
 							          
 							        <div class="add-room">
-							            <div class="price">D1,100</div>
+							            <div class="price">GMD1,100</div>
 							            <div class="small">per night</div>
 							            <button class="btn">Select Room</button>
 							        </div>
@@ -221,7 +224,7 @@
 							        </div>
 							          
 							        <div class="add-room">
-							            <div class="price">D1,300</div>
+							            <div class="price">GMD1,300</div>
 							            <div class="small">per night</div>
 							            <button class="btn">Select Room</button>
 							        </div>
@@ -236,7 +239,7 @@
 							        </div>
 							          
 							        <div class="add-room">
-							            <div class="price">D1,700</div>
+							            <div class="price">GMD1,700</div>
 							            <div class="small">per night</div>
 							            <button class="btn">Select Room</button>
 							        </div>
@@ -260,11 +263,11 @@
 
 				<div class="average-rating">
 					<div class="average-rating-bar">
-						<progress max="5.0" value="<%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%>"></progress>
+						<progress max="5.0" value="<%= @avg_review %>"></progress>
 					</div>
 
 					<div class="average-rating-figure">
-						Average Rating: <span><%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%></span> out of 5
+						Average Rating: <span><%= @avg_review %></span> out of 5
 					</div>
 				</div>
 

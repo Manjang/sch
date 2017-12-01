@@ -5,6 +5,7 @@ class Hotel < ApplicationRecord
 	has_many :rooms
 	has_many :facilities
 	has_many :galleries
+	has_many :hotel_images
 
 	def self.search(search)
 	  if search
@@ -14,7 +15,8 @@ class Hotel < ApplicationRecord
 	  end
 	end
 
-	has_attached_file :hotel_image, :styles => { :hotel_index => "360x265>", :hotel_show => "1010x415>" }, :default_url => "/images/:style/missing.png"
-  	validates_attachment_content_type :hotel_image, :content_type => /\Aimage\/.*\z/
+	mount_uploader :image, HotelUploader
+	# has_attached_file :hotel_image, :styles => { :hotel_index => "360x265>", :hotel_show => "1010x415>" }, :default_url => "/images/:style/missing.png"
+ #  	validates_attachment_content_type :hotel_image, :content_type => /\Aimage\/.*\z/
 
 end

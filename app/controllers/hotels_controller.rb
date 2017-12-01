@@ -13,6 +13,15 @@ class HotelsController < ApplicationController
 	def show
 		@hotel = Hotel.find(params[:id])
 		@review = Review.where(hotel_id: @hotel)
+		unless @review.present?
+			@avg_review = 0
+		else
+	     @avg_review = @review.average(:rating).present? ? @review.average(:rating).round(0) : 0
+	    end
+		@images = Gallery.where(hotel_id: @hotel)
+		# @images = HotelImage.where(hotel_id: @hotel)
+
+		
 	end
 	def add_review
 		
@@ -77,7 +86,9 @@ class HotelsController < ApplicationController
 	    @faq = Hotel.where(faq: true)
 	end
 
-
+	def login_register
+ 	    @login_register = Hotel.where(login_register: true)
+	end
 	private
 
 	# def hotel_params
