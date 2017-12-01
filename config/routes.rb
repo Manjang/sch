@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get	'hotels/show'
   get 'hotels/about'
   get 'hotels/faq'
+  get 'hotels/login_register'
   post 	'reviews/create'
   post 	'hotels/add_review'
   # resources :hotels 

@@ -77,6 +77,10 @@ class HotelsController < ApplicationController
 	    @faq = Hotel.where(faq: true)
 	end
 
+	def login_register
+	    @login_register = Hotel.where(login_register: true)
+	end
+
 
 	private
 
