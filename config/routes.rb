@@ -16,15 +16,15 @@ Rails.application.routes.draw do
   root  'hotels#index'
   get	'hotels/index'
   get	'hotels/show'
-<<<<<<< HEAD
+
   get 'login' => 'hotels#login_register'
   get 'about'     => 'hotels#about'
   get 'faq'     => 'hotels#faq'
-=======
+
   get 'hotels/about'
   get 'hotels/faq'
   get 'hotels/login_register'
->>>>>>> 459fce69e048652e14939d1e37cc4d0ca6a6781e
+
   post 	'reviews/create'
   post 	'hotels/add_review'
   # resources :hotels 

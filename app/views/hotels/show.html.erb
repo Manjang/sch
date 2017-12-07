@@ -1,25 +1,18 @@
 	<div class="single-hotel-top">
 		<div class="single-hotel-top-wrap">
-			<span class="hotel-name"><%= @hotel.name %></span>
-			<span class="hotel-category">5 Star</span>
-			<span class="hotel-address"><%= @hotel.address %></span>
+			<div class="single-hotel-top-left">
+				<div class="hotel-name"><%= @hotel.name %></div>
+				<div class="hotel-category">5 Star</div>
+				<div class="hotel-address"><%= @hotel.address %></div>
+			</div>
+			
 
-			<span class="hotel-average-rating">
+			<div class="hotel-average-rating single-hotel-top-right">
 				<span class="hotel-like"><img src="../assets/like.svg" width="30px"> <span class="likes"> 273 Likes</span></span>
 				
-<<<<<<< HEAD
-				<ul class="rate">Average Rating: <%= @avg_review%> out of 5
-					<!-- <li class="icon star"><i class="fa fa-star"></i></li>
-					<li class="icon star"><i class="fa fa-star"></i></li>
-					<li class="icon star"><i class="fa fa-star"></i></li>
-					<li class="icon star"><i class="fa fa-star"></i></li>
-					<li class="icon star"><i class="fa fa-star-half-o"></i></li> -->
-				</ul>
-=======
 				<span>Average Rating: <div class="review-rating" data-score="<%= Review.where(hotel_id: @hotel.id).average("rating").round(1)%>" ></div></span>
-				
->>>>>>> 459fce69e048652e14939d1e37cc4d0ca6a6781e
-			</span>
+
+			</div>
 		</div>
 	</div>
 
@@ -29,31 +22,14 @@
 			<div class="hotel-gallery">
 				<ul class="slideshow slideshow-main js-flickity" data-flickity='{ "asNavFor": ".slideshow-main", "pageDots": false, "contain": true }' >
 					<% @images.each do |i| %>
-					<li class="slide" style="background-image: url()"><%= image_tag i.image_name.to_s,  width: '100%', height: '100%' %></li>
+						<li class="slide" style="background-image: url()"><%= image_tag i.image_name.to_s,  width: '100%', height: '100%' %></li>
 					<%end%>
-					<!-- <li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li> -->
-					<!-- <li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel3.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel4.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel5.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel6.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel7.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel8.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel9.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel10.jpg);"></li> -->
 				</ul>
 
 				<ul class="slideshow slideshow-nav" data-flickity='{ "asNavFor": ".slideshow-main", "pageDots": false, "contain": true }'>
-				  	<li class="slide" style="background-image: url(../assets/hotel1.jpg);"></li>
-				  	<li class="slide" style="background-image: url(../assets/hotel2.jpg);"></li>
-				  	<li class="slide" style="background-image: url(../assets/hotel3.jpg);"></li>
-				  	<li class="slide" style="background-image: url(../assets/hotel4.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel5.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel6.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel7.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel8.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel9.jpg);"></li>
-					<li class="slide" style="background-image: url(../assets/hotel10.jpg);"></li>
+					<% @images.each do |i| %>
+				  		<li class="slide" style="background-image: url();"><%= image_tag i.image_name.to_s,  width: '100%', height: '100%' %></li>
+				  	<%end%>
 				</ul>
 
 
@@ -76,32 +52,33 @@
 								    <%= @hotel.description %>
 								<% end %>
 
+								<hr>
 
 								<div class="facilities">
 									<h4>HOTEL FACILITIES</h4>
 									<div class="hotel-facilities">
 										<div class="hotel-facility">
-											<div class="facility-icon"><i class="icon icon-cutlery"></i></div>
+											<div class="facility-icon"><i class="fa fa-cutlery" aria-hidden="true"></i></div>
 											<div class="facility-name">Restaurant</div>
 										</div>
 
 										<div class="hotel-facility">
-											<div class="facility-icon"><i class="icon icon-glass"></i></div>
+											<div class="facility-icon"><i class="fa fa-glass" aria-hidden="true"></i></div>
 											<div class="facility-name">Bar/Lounge</div>
 										</div>
 
 										<div class="hotel-facility">
-											<div class="facility-icon"><i class="icon icon-music"></i></div>
+											<div class="facility-icon"><i class="fa fa-music" aria-hidden="true"></i></i></div>
 											<div class="facility-name">Music</div>
 										</div>
 
 										<div class="hotel-facility">
-											<div class="facility-icon"><i class="icon icon-flight"></i></div>
+											<div class="facility-icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
 											<div class="facility-name">Airport Pickup</div>
 										</div>
 
 										<div class="hotel-facility">
-											<div class="facility-icon"><i class="icon icon-house"></i></div>
+											<div class="facility-icon"><i class="fa fa-bed" aria-hidden="true"></i></div>
 											<div class="facility-name">Room Service</div>
 										</div>
 									</div>
