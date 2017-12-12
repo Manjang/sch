@@ -134,3 +134,185 @@
       font-weight: 600;
     }
 }
+
+
+
+.advert {
+    height: 300px;
+    width: calc(100% - 40px);
+    border: 5px solid #f4f4f4;
+    border-radius: 5px;
+
+    a {
+      display: inline-block;
+      height: 300px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+}
+
+
+
+
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: calc(100% - 30px);
+    max-width: 800px;
+    margin: 35px auto;
+}
+
+.add-hotel--headline {
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.add-hotel form {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.form-input {
+    width: 50%;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+      width: calc(100% - 30px);
+    }
+}
+
+label {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.form-input input {
+    width: calc(100% - 55px);
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    height: 35px;
+    padding: 0 15px;
+    background-color: #dddddd;
+}
+
+.form-input select {
+    width: calc(100% - 25px);
+    border: 1px solid #dddddd;
+    height: 35px;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+
+.form-input textarea {
+    width: calc(100% - 30px);
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background-color: #dddddd;
+
+    @media screen and (max-width: 768px) {
+      width: calc(100% - 30px);
+    }
+}
+
+.form-input #hotel_thumbnail {
+  width: 250px !important;
+}
+
+.hotel-owner {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+hr {
+    width: 100%;
+}
+
+.hotel-owner--headline {
+    width: 100%;
+    margin: 35px 0;
+}
+
+.add-hotel button {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #dddddd;
+    text-transform: uppercase;
+    padding: 15px 12px;
+    margin: 35px 0;
+    width: 130px;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      margin: 15px;
+    }
+}
+
+.add-hotel button:hover {
+    border: 1px solid crimson;
+    background-color: crimson;
+    transition: 500ms ease-out;
+    color: #ffffff;
+}
+
+
+
+.contact {
+    max-width: 800px;
+    margin: 35px auto;
+
+    &--headline,
+    &--subheadline,
+    &-form-headline {
+      text-align: center;
+    }
+
+    &--cols {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    &--col1,
+    &--col2 {
+      width: 50%;
+    }
+
+    .form-input {
+      width: 100%;
+    }
+
+    button {
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      background-color: #dddddd;
+      text-transform: uppercase;
+      padding: 15px 12px;
+      margin: 35px 0;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid crimson;
+        background-color: crimson;
+        transition: 500ms ease-out;
+        color: #ffffff;
+      }
+    }
+}
+
+
+.contact-page-map #map {
+  width: 100%;
+  height: 450px;
+  padding: 0;
+  margin: 0;
+}

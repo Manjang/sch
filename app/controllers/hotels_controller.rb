@@ -23,6 +23,7 @@ class HotelsController < ApplicationController
 
 		
 	end
+
 	def add_review
 		
 		# @add_rev = Review.new(:rating => params[:rating], :comment => params[:comment], :hotel_id => params[:hotel_id])
@@ -37,9 +38,12 @@ class HotelsController < ApplicationController
 		end
 		
 	end
+
 	def new
-		@hotel = current_user.hotels.build
-		@categories = Category.all.map{ |c| [c.name, c.id] }
+		# @hotel = current_user.hotels.build
+		# @categories = Category.all.map{ |c| [c.name, c.id] }
+
+
 	end
 
 	def create
@@ -52,12 +56,16 @@ class HotelsController < ApplicationController
 			render 'new'
 		end
 	end
+
 	def about
-		
 	end
+
 	def faq
-		
 	end
+
+	def contact
+	end
+
 	def edit
 		@categories = Category.all.map{ |c| [c.name, c.id] }
 	end
@@ -99,7 +107,7 @@ class HotelsController < ApplicationController
 	# 	params.require(:hotel).permit(:name, :address, :description, :category_id, :hotel_img)
 	# end
 	def review_params
-			params.permit(:rating, :comment, :hotel_id)
+		params.permit(:rating, :comment, :hotel_id)
 	end
 	# def find_hotel
 	# 	@hotel = Hotel.find(params[:id])

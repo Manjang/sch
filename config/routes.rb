@@ -16,10 +16,12 @@ Rails.application.routes.draw do
   root  'hotels#index'
   get	'hotels/index'
   get	'hotels/show'
+  get 'hotels/new'
 
-  get 'login' => 'hotels#login_register'
-  get 'about'     => 'hotels#about'
-  get 'faq'     => 'hotels#faq'
+  get 'login'     =>  'hotels#login_register'
+  get 'about'     =>  'hotels#about'
+  get 'faq'       =>  'hotels#faq'
+  get 'contact'   =>  'hotels#contact'
 
   get 'hotels/about'
   get 'hotels/faq'
