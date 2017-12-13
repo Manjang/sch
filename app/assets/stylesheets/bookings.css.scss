@@ -1,0 +1,260 @@
+.booking {
+    display: flex;
+    flex-flow: row wrap;
+    width: calc(100% - 20px);
+    max-width: 1200px;
+    margin: 35px auto;
+
+    &-sidebar {
+      width: calc(30% - 10px);
+      margin: 0 auto;
+
+      @media screen and (max-width: 800px) {
+      	width: calc(100% - 30px);
+      }
+    }
+
+    &-main {
+      width: calc(70% - 20px);
+      margin: auto;
+      padding: 0 15px;
+
+      @media screen and (max-width: 800px) {
+      	width: calc(100% - 30px);
+      }
+    }
+
+    .book-row {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+
+        &--input {
+            margin: 5px;
+            margin-bottom: 20px;
+
+            @media screen and (max-width: 768px) {
+		      	margin: 10px 0;
+		    }
+        }
+    }
+
+    &-sidebar--headline {
+        background-color: #0b677d;
+        padding: 10px;
+        color: #ffffff;
+        text-align: center;
+    }
+}
+
+.booking-details {
+  border: 1px solid #0b677d;
+  margin-bottom: 20px;
+
+  &--checkin,
+  &--checkout,
+  &--duration,
+  &--selected-room {
+    padding: 2px 15px;
+    font-size: 14px;
+
+    span {
+      font-weight: 400;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+.booking-facilities,
+.booking-room-price {
+  padding: 2px 15px;
+  font-size: 14px;
+  color: #0b677d;
+
+  p {
+    margin: 0;
+  }
+}
+
+.booking-room-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.booking--hotel-facilities,
+.booking-sidebar--headline,
+.booking--price-summary {
+  border: 1px solid #0b677d;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.sch-selected-hotel {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 35px;
+
+    @media screen and (max-width: 768px) {
+      	flex-flow: column wrap;
+    }
+}
+
+.sch-hotel-thumbnail {
+    width: 30%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media screen and (max-width: 768px) {
+      	width: 100%;
+    }
+}
+
+.sch-hotel-details {
+    width: calc(70% - 20px);
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      	width: 100%;
+    }
+}
+
+.sch-hotel-headline {
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.sch-about-hotel {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 768px) {
+      	flex-direction: column;
+    }
+}
+
+.sch-about-hotel span {
+    margin: 0 5px;
+}
+
+.sch-location,
+.sch-phone {
+    display: block;
+    text-decoration: none;
+    color: #0b677d;
+}
+
+.traveller-info {
+
+  &--headline {
+      font-weight: 400;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+      width: calc(100% - 55px);
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      height: 35px;
+      padding: 0 15px;
+      background-color: #dddddd;
+
+    @media screen and (max-width: 768px) {
+      	width: 100%;
+    }
+  }
+
+  select {
+    width: calc(100% - 25px);
+    border: 1px solid #dddddd;
+    height: 35px;
+    border-radius: 5px;
+    padding: 0 15px;
+
+    @media screen and (max-width: 768px) {
+      	width: 100%;
+    }
+  }
+
+  .book-row-title {
+    width: calc(20% - 10px);
+
+    @media screen and (max-width: 768px) {
+      	width: 100%;
+    }
+  }
+
+  .book-row-fname,
+  .book-row-lname {
+    width: calc(40% - 10px);
+
+    @media screen and (max-width: 768px) {
+      	width: calc(100% - 30px);
+    }
+  }
+
+  .book-row-country {
+    width: calc(20% - 10px);
+
+    @media screen and (max-width: 768px) {
+      	width: 100%;
+    }
+  }
+
+  .book-row-phone {
+    width: calc(80% - 10px);
+
+    @media screen and (max-width: 768px) {
+      	width: calc(100% - 30px);
+    }
+  }
+
+  .book-row-email,
+  .book-row-c-email {
+    width: calc(50% - 10px);
+
+    @media screen and (max-width: 768px) {
+      	width: calc(100% - 30px);
+    }
+  }
+
+  .book-row-add-info textarea {
+    width: calc(100% - 30px);
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background-color: #dddddd;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+      	width: 100%;
+    }
+  }
+
+  .book-row-checkbox {
+    margin-bottom: 20px;
+
+    input[type="checkbox"] {
+      width: 20px;
+    }
+
+    label {
+      width: calc(100% - 30px);
+    }
+  }
+}
+
+.booking-page {
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    padding: 20px 0;
+    background-color: #dddddd;
+    margin-bottom: 35px;
+}

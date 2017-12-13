@@ -43,18 +43,22 @@ class HotelsController < ApplicationController
 		# @hotel = current_user.hotels.build
 		# @categories = Category.all.map{ |c| [c.name, c.id] }
 
+		@hotel = Hotel.new(save_hotel)
 
+		# if @add_hotel.save!
+		# 	redirect_to :action => 'show', :id => params[:hotel_id]
+		# 	flash[:success] = "Hotel Added"
+		# else
+		# 	redirect_to :action => 'show', :id => params[:hotel_id]
+		# 	flash[:danger] = "Sorry hotel cannot be added"
+		# end
 	end
 
 	def create
-		@hotel = current_user.hotels.build(hotel_params)
-		@hotel.category_id = params[:category_id]
+		# @hotel = current_user.hotels.build(hotel_params)
+		# @hotel.category_id = params[:category_id]
 
-		if @hotel.save
-			redirect_to root_path
-		else
-			render 'new'
-		end
+		@hotel = Hotel.new(save_hotel)
 	end
 
 	def about
@@ -64,6 +68,9 @@ class HotelsController < ApplicationController
 	end
 
 	def contact
+	end
+
+	def book
 	end
 
 	def edit
@@ -108,6 +115,10 @@ class HotelsController < ApplicationController
 	# end
 	def review_params
 		params.permit(:rating, :comment, :hotel_id)
+	end
+
+	def save_hotel
+		params.permit(:name, :address, :description, :hotel_image, :website, :phone, :email, :video)
 	end
 	# def find_hotel
 	# 	@hotel = Hotel.find(params[:id])
